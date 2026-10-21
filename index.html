@@ -2,238 +2,433 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gemini Notebook Guidebook — Study Smarter From Your Own Books &amp; Notes</title>
-<meta name="description" content="A 14-page step-by-step guidebook on using Gemini Notebook for job exams, admissions and study — from your own books and notes, using only your mobile.">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Gemini Notebook Guidebook — Saurabh Saha</title>
+<meta name="description" content="A 14-page guidebook on using Gemini Notebook for job exams, admissions and study — from your own books and notes, using only your mobile.">
+<meta name="theme-color" content="#FAF4E8">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0a0a0a; --mut:#5c5c5c; --line:#e7e7e7; --bg:#ffffff;
-    --soft:#f6f6f4; --accent:#b45309; --accent-soft:#fdf3e3;
-    --green:#15803d; --radius:16px;
+    --paper:#FAF4E8; --paper2:#F3EADA; --line:#E4D7C0;
+    --ink:#2B2D33; --soft:#5E5A52; --mute:#8E836F;
+    --navy:#22314F; --navy-d:#18233A;
+    --terra:#BC4F2E; --terra-d:#A2411F;
+    --head:'Fraunces',Georgia,serif;
+    --sans:'Manrope',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --pad:24px; --ease:cubic-bezier(.2,.7,.2,1);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:680px;margin:0 auto;padding:0 20px}
-  header{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
-  .bar{display:flex;align-items:center;gap:10px;padding:12px 0}
-  .logo{width:34px;height:34px;border-radius:9px;background:#0a0a0a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
-  .brand{font-weight:700;font-size:17px;letter-spacing:-.01em}
-  .bar a.buy{margin-left:auto;background:var(--ink);color:#fff;text-decoration:none;font-size:14px;font-weight:600;padding:8px 16px;border-radius:999px}
+  body{font-family:var(--sans);color:var(--ink);font-size:17px;line-height:1.7;background-color:var(--paper);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .28 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1060px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+  button{font-family:inherit;cursor:pointer}
+  img{max-width:100%}
+
+  /* top bar */
+  .top{padding-top:20px}
+  .brand{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:14.5px;color:var(--navy);text-decoration:none}
+  .brand .ava{width:30px;height:30px;border-radius:50%;background:var(--navy);color:#FBF6EC;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;box-shadow:0 0 0 1px rgba(34,49,79,.12)}
+
   /* hero */
-  .hero{padding:40px 0 8px;text-align:center}
-  .cover{width:min(300px,72vw);aspect-ratio:3/4;margin:0 auto 26px;border-radius:10px;background:linear-gradient(150deg,#111 0%,#1c1c1e 55%,#2b2118 100%);color:#fff;box-shadow:0 24px 48px rgba(0,0,0,.28);display:flex;flex-direction:column;justify-content:space-between;padding:26px 22px;text-align:left;position:relative;overflow:hidden}
-  .cover::after{content:"";position:absolute;inset:auto -40px -60px auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.35),transparent 70%)}
-  .cover .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#f5b74a;font-weight:700}
-  .cover h2{font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-.01em}
-  .cover h2 span{color:#f5b74a}
-  .cover .sub{font-size:13.5px;color:#cfcfcf;margin-top:8px}
-  .cover .foot{display:flex;justify-content:space-between;align-items:flex-end;font-size:11px;color:#9a9a9a;letter-spacing:.08em;text-transform:uppercase}
-  .cover .foot b{color:#fff;font-size:12px}
-  h1{font-size:30px;line-height:1.2;font-weight:800;letter-spacing:-.02em}
-  .lede{color:var(--mut);font-size:16.5px;margin-top:10px}
-  .pages{display:inline-block;margin-top:14px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:13.5px;font-weight:600}
-  .price{margin:26px 0 4px;display:flex;align-items:baseline;justify-content:center;gap:12px}
-  .price .was{color:#9a9a9a;text-decoration:line-through;font-size:22px}
-  .price .off{background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:13px;padding:3px 10px;border-radius:999px}
-  .price .now{font-size:44px;font-weight:800;letter-spacing:-.02em}
-  .cta{display:block;margin:18px auto 0;max-width:420px;background:var(--ink);color:#fff;text-align:center;text-decoration:none;font-weight:700;font-size:17px;padding:15px 20px;border-radius:999px}
-  .cta:active{transform:scale(.99)}
-  .note{text-align:center;color:var(--mut);font-size:13px;margin-top:10px}
-  /* sections */
-  section{padding:34px 0 6px}
-  h3.sec{font-size:21px;font-weight:800;letter-spacing:-.01em;margin-bottom:14px}
-  .cards{display:grid;gap:14px}
-  @media(min-width:560px){.cards{grid-template-columns:1fr 1fr}}
-  .card{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:#fff}
-  .card.hl{background:var(--soft);border-color:#dcdcdc}
-  .card h4{font-size:16.5px;font-weight:700;margin-bottom:6px}
-  .card .tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
-  .card.hl .tag{color:var(--accent)}
-  .card p{color:#333;font-size:15px}
-  ul.inside{list-style:none}
-  ul.inside li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px;display:flex;gap:10px}
-  ul.inside li:last-child{border-bottom:none}
-  ul.inside li::before{content:"✓";color:var(--green);font-weight:800}
-  /* buy box */
-  .buybox{border:1.5px solid var(--ink);border-radius:var(--radius);padding:24px 20px;margin-top:6px}
-  .buybox h4{font-size:18px;font-weight:800;text-align:center}
-  .buybox .amt{text-align:center;font-size:15px;color:var(--mut);margin-top:4px}
-  .buybox .amt b{color:var(--ink);font-size:17px}
-  .qr{display:block;width:210px;height:210px;margin:18px auto 6px;border:1px solid var(--line);border-radius:12px}
-  .upiid{text-align:center;font-size:14.5px;color:var(--mut)}
-  .upiid b{color:var(--ink)}
-  .paybtn{display:block;margin:16px auto 0;max-width:420px;background:var(--green);color:#fff;text-align:center;text-decoration:none;font-weight:700;font-size:16.5px;padding:14px 20px;border-radius:999px}
-  .steps{display:flex;gap:8px;justify-content:center;margin:18px 0 2px;flex-wrap:wrap}
-  .steps span{font-size:12.5px;font-weight:600;background:var(--soft);border:1px solid var(--line);padding:4px 11px;border-radius:999px}
-  form{margin-top:20px;border-top:1px dashed var(--line);padding-top:20px}
-  form p{font-size:14.5px;font-weight:600;margin-bottom:12px;text-align:center}
-  label{display:block;font-size:13px;font-weight:600;color:var(--mut);margin:12px 0 5px}
-  input{width:100%;border:1px solid #cfcfcf;border-radius:10px;padding:12px 13px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink)}
-  input:focus{outline:2px solid var(--ink);outline-offset:1px;border-color:transparent}
-  button.go{width:100%;margin-top:18px;background:var(--ink);color:#fff;border:none;font-family:inherit;font-weight:700;font-size:16.5px;padding:14px;border-radius:999px;cursor:pointer}
-  .err{color:#b91c1c;font-size:13.5px;margin-top:8px;display:none}
-  .done{display:none;text-align:center;padding:8px 0 2px}
-  .done .tick{width:54px;height:54px;border-radius:50%;background:#e8f7ee;color:var(--green);font-size:27px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
-  .done h5{font-size:17px;font-weight:800}
-  .done p{color:var(--mut);font-size:14px;margin-top:4px}
-  .dl{display:inline-block;margin-top:14px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;padding:13px 26px;border-radius:999px;font-size:16px}
+  .hero{display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;padding-top:34px;padding-bottom:56px}
+  .hero-text{max-width:560px}
+  .hero-text .over{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--terra)}
+  .hero-text h1{font-family:var(--head);font-weight:700;font-size:clamp(44px,9vw,64px);line-height:1.05;color:var(--navy);margin-top:6px}
+  .hero-text .sub{font-size:19px;color:var(--ink);margin-top:14px;font-weight:600}
+  .hero-text .tagline{color:var(--soft);margin-top:6px}
+  .pill{display:inline-block;margin-top:16px;padding:5px 15px;border:1px solid var(--line);border-radius:999px;background:var(--paper2);font-weight:700;font-size:14px;color:var(--navy)}
+
+  /* 3d book stage */
+  .stage{position:relative;width:58vw;max-width:250px;margin:86px auto 0;--t:9px}
+  .glow{position:absolute;z-index:0;pointer-events:none;left:50%;transform:translateX(-50%);top:-46px;bottom:-12px;width:calc(100% + 112px);max-width:calc(100vw - 2 * var(--pad));border-radius:999px 999px 22px 22px;
+    background:radial-gradient(115% 62% at 50% 36%,rgba(255,238,208,.17),rgba(255,238,208,0) 70%),linear-gradient(180deg,var(--navy) 0%,var(--navy-d) 100%)}
+  .float{position:relative;z-index:1;perspective:1500px;animation:float 7s ease-in-out infinite;will-change:transform}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+  .book{position:relative;transform-style:preserve-3d;transform:rotateX(4deg) rotateY(-18deg);aspect-ratio:3/4.24;width:100%}
+  .face{position:absolute;inset:0;border-radius:2px 4px 4px 2px}
+  .front{transform:translateZ(calc(var(--t) / 2));overflow:hidden;box-shadow:0 0 0 .5px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.25);background:linear-gradient(155deg,#2A3C63 0%,var(--navy) 55%,var(--navy-d) 100%);color:#FBF6EC;display:flex;flex-direction:column;padding:20px 18px;text-align:left}
+  .front::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,0) 42%);pointer-events:none}
+  .front .k{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#E9B44C;font-weight:800}
+  .front h2{font-family:var(--head);font-size:30px;line-height:1.08;margin-top:8px;font-weight:700}
+  .front h2 span{color:#E9B44C}
+  .front .s{font-size:12.5px;color:#C9D2E4;margin-top:9px;line-height:1.5}
+  .front .f{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#93A3C0}
+  .front .f b{color:#FBF6EC;font-size:11px}
+  .front .rule{width:34px;height:3px;background:var(--terra);border-radius:2px;margin-top:14px}
+  .back{transform:translateZ(calc(var(--t) / -2)) rotateY(180deg);background:var(--navy-d)}
+  .edge{inset:auto;top:1px;bottom:1px;left:50%;width:var(--t);transform:translateX(-50%) rotateY(90deg) translateZ(0);background:repeating-linear-gradient(90deg,#EFE6D0 0 1.5px,#DCD0B6 1.5px 3px);transform:rotateY(-90deg) translateZ(calc(125px - var(--t)/2));display:none}
+  .spine{position:absolute;top:0;bottom:0;left:0;width:var(--t);transform:rotateY(-90deg) translateZ(calc(var(--t)/2));transform-origin:left;background:#141D31}
+  .ground{width:84%;height:20px;margin:18px auto 0;position:relative;left:-3%;border-radius:50%;background:radial-gradient(closest-side,rgba(4,8,16,.88),rgba(4,8,16,.36) 60%,transparent);filter:blur(4px);animation:ground 7s ease-in-out infinite}
+  @keyframes ground{0%,100%{transform:scaleX(1);opacity:.85}50%{transform:scaleX(.9);opacity:.65}}
+  .peek{position:absolute;left:50%;bottom:-31px;transform:translateX(-50%);z-index:3;display:inline-flex;align-items:center;gap:7px;padding:8px 16px 8px 13px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.1);color:#F4ECDD;font-weight:600;font-size:14.5px;white-space:nowrap;backdrop-filter:blur(6px)}
+  .peek:hover{background:rgba(255,255,255,.2)}
+
+  /* buy row */
+  .buy{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:66px;width:100%;max-width:360px}
+  .price-wrap{text-align:left}
+  .was{display:flex;align-items:center;gap:7px;font-size:16px;font-weight:500;color:var(--mute);margin-bottom:7px}
+  .was s{text-decoration-thickness:1.5px;text-decoration-color:var(--terra)}
+  .was em{font-style:normal;background:#F6E3D3;color:var(--terra-d);font-weight:700;font-size:12.5px;padding:2px 8px;border-radius:999px}
+  .price{font-weight:800;font-size:34px;line-height:1;color:var(--navy)}
+  .btn{flex:1;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:12px 26px;border:none;border-radius:999px;background:var(--navy);color:#FBF6EC;font-weight:700;font-size:18.5px;box-shadow:0 1px 0 rgba(255,255,255,.14) inset,0 14px 28px -14px rgba(24,35,58,.75);transition:background .25s,transform .25s var(--ease),box-shadow .25s;text-decoration:none}
+  .btn:hover{background:var(--navy-d);transform:translateY(-1px)}
+  .btn-sm{min-height:46px;font-size:16px;padding:9px 20px;flex:none}
+
+  /* difference */
+  .diff{padding-top:16px;padding-bottom:8px}
+  .diff h2,.faq h2{font-family:var(--head);font-weight:700;font-size:clamp(24px,5.4vw,30px);color:var(--navy);text-align:center;margin-bottom:22px}
+  .diff-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:640px;margin:0 auto;text-align:left}
+  @media(min-width:700px){.diff-grid{grid-template-columns:1fr 1fr}}
+  .diff-card{background:#F6EEDF;border:1px solid var(--line);border-radius:18px;padding:22px 22px 20px}
+  .diff-card.gn{background:var(--navy);border-color:var(--navy);color:#E9EDF5}
+  .diff-card h3{font-size:15px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--terra)}
+  .diff-card.gn h3{color:#E9B44C}
+  .diff-card .who{font-weight:800;font-size:18px;margin:4px 0 2px;color:var(--navy)}
+  .diff-card.gn .who{color:#fff}
+  .diff-logos{display:flex;gap:7px;margin:10px 0 12px;flex-wrap:wrap}
+  .diff-logos span{font-size:12.5px;font-weight:700;border:1px solid var(--line);background:rgba(255,255,255,.55);border-radius:999px;padding:3px 10px;color:var(--soft)}
+  .diff-card.gn .diff-logos span{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#C9D2E4}
+  .diff-card p{font-size:15.5px;line-height:1.65;color:var(--soft)}
+  .diff-card.gn p{color:#C9D2E4}
+  .diff .after{max-width:640px;margin:18px auto 0;text-align:center;color:var(--soft);font-size:16px}
+
   /* faq */
-  details{border-bottom:1px solid var(--line);padding:14px 0}
-  details summary{font-weight:700;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
-  details summary::-webkit-details-marker{display:none}
-  details summary::after{content:"+";font-size:20px;color:var(--mut)}
-  details[open ] summary::after{content:"–"}
-  details p{color:#333;font-size:15px;margin-top:8px}
-  footer{margin-top:44px;border-top:1px solid var(--line);padding:22px 0 34px;text-align:center;color:var(--mut);font-size:13.5px}
-  footer b{color:var(--ink)}
+  .faq{max-width:640px;padding-top:36px;padding-bottom:40px}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{position:relative;list-style:none;cursor:pointer;padding:17px 28px 17px 0;font-weight:700;font-size:17px;color:var(--ink)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before,.faq summary::after{content:"";position:absolute;right:4px;top:50%;width:12px;height:1.5px;background:var(--navy);transition:transform .3s var(--ease),opacity .3s}
+  .faq summary::after{transform:rotate(90deg)}
+  .faq details[open ] summary::after{transform:rotate(0deg);opacity:0}
+  .faq details p{padding:0 0 18px;color:var(--soft);font-size:16px}
+
+  /* footer */
+  .foot{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding-top:24px;padding-bottom:118px;color:var(--mute);font-size:14.5px}
+  .foot .ava{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#FBF6EC;display:flex;align-items:center;justify-content:center;font-weight:800}
+
+  /* sticky bar */
+  .sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 18px;border-radius:999px;background:rgba(250,244,232,.86);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 0 0 1px rgba(34,49,79,.08),0 16px 32px -18px rgba(34,49,79,.5);transform:translateY(calc(100% + 28px));transition:transform .45s var(--ease);max-width:520px;margin:0 auto}
+  .sticky.show{transform:translateY(0)}
+  .sticky .t{font-weight:800;font-size:14.5px;color:var(--navy);line-height:1.25}
+  .sticky .p{font-size:13.5px;color:var(--mute)}
+  .sticky .p b{color:var(--navy);font-size:15px}
+  .sticky .p s{text-decoration-color:var(--terra)}
+  .sticky .sp{flex:1}
+
+  /* overlays */
+  .overlay{position:fixed;inset:0;z-index:50;display:none}
+  .overlay.open{display:block}
+  .scrim{position:absolute;inset:0;background:rgba(16,20,30,.72);backdrop-filter:blur(3px)}
+
+  /* reader */
+  .rd .rd-card{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px}
+  .rd-bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:flex-end;padding:14px}
+  .lb-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#F4ECDD;font-size:19px}
+  .rd-stage{position:relative;perspective:1800px}
+  .rd-fly{animation:fly .5s var(--ease)}
+  @keyframes fly{from{transform:rotateY(7deg) translateX(14px);opacity:.4}to{transform:rotateY(0) translateX(0);opacity:1}}
+  .rd-book{--pw:min(84vw,400px,calc((100svh - 210px) * .7059));position:relative;width:var(--pw);height:calc(var(--pw) * 1.4167);border-radius:3px 6px 6px 3px;box-shadow:0 30px 60px -18px rgba(0,0,0,.65);overflow:hidden;background:#FFFDF6}
+  .rd-page{position:absolute;inset:0;padding:26px 24px;display:none;flex-direction:column}
+  .rd-page.on{display:flex}
+  .rd-page .pg-k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);font-weight:800}
+  .rd-page h4{font-family:var(--head);font-size:23px;color:var(--navy);line-height:1.2;margin-top:8px}
+  .rd-page p{font-size:14.5px;line-height:1.65;color:var(--soft);margin-top:10px}
+  .rd-page .pg-n{margin-top:auto;text-align:center;color:var(--mute);font-size:12.5px}
+  .rd-page.coverp{background:linear-gradient(155deg,#2A3C63,var(--navy) 55%,var(--navy-d));color:#FBF6EC}
+  .rd-page.coverp h4{color:#fff;font-size:30px}
+  .rd-page.coverp p{color:#C9D2E4}
+  .rd-lock{margin-top:14px;display:inline-flex;align-items:center;gap:.5em;padding:.5em 1.05em;border-radius:999px;background:rgba(188,79,46,.12);color:var(--terra-d);font-weight:700;font-size:13px;align-self:flex-start}
+  .rd-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3}
+  .lb-prev{left:-8px}.lb-next{right:-8px}
+  @media(min-width:560px){.lb-prev{left:-64px}.lb-next{right:-64px}}
+  .rd-hint{color:#B9C2D4;font-size:13.5px;margin-top:16px;text-align:center}
+  .rd-end{align-items:center;text-align:center;justify-content:center}
+  .rd-end .rd-end-logo{width:52px;height:52px;border-radius:50%;background:var(--navy);color:#FBF6EC;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:21px}
+  .rd-end .price{margin-top:8px}
+  .rd-end .was{justify-content:center}
+
+  /* payment sheet */
+  .pay{display:none}
+  .pay.open{display:block}
+  .pay .scrim{background:rgba(16,20,30,.6)}
+  .pay-card{position:absolute;left:0;right:0;bottom:0;margin:0 auto;width:100%;max-width:440px;max-height:calc(100dvh - 24px);overflow:auto;background:var(--paper);border-radius:22px 22px 0 0;padding:8px 22px calc(24px + env(safe-area-inset-bottom));box-shadow:0 -20px 50px -20px rgba(0,0,0,.4);animation:up .4s var(--ease)}
+  @keyframes up{from{transform:translateY(24px);opacity:.6}to{transform:translateY(0);opacity:1}}
+  @media(min-width:520px){.pay-card{border-radius:22px;bottom:24px}}
+  .pay-head{display:flex;align-items:center;justify-content:space-between;padding:12px 0 4px}
+  .pay-head h3{font-family:var(--head);font-size:21px;color:var(--navy)}
+  .pay-x{display:flex;align-items:center;justify-content:center;width:40px;height:40px;margin-right:-8px;border:0;background:none;border-radius:50%;color:var(--navy);font-size:19px}
+  .pay-step{display:flex;gap:12px;margin-top:18px}
+  .pay-step b{flex:none;display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#FBF6EC;font-size:14px;margin-top:2px}
+  .pay-step .tx{flex:1}
+  .pay-step .tx strong{font-size:16.5px;color:var(--ink)}
+  .pay-step .tx strong .amt{color:var(--terra-d)}
+  .pay-num{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding:10px 10px 10px 18px;border:1px solid var(--line);border-radius:14px;background:#fff}
+  .pay-num .id{font-weight:800;font-size:18px;color:var(--navy);letter-spacing:.01em}
+  .pay-num .id small{display:block;font-weight:600;font-size:12px;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
+  .pay-copy{flex:none;min-height:40px;padding:6px 16px;border:1px solid var(--navy);border-radius:999px;background:none;color:var(--navy);font-weight:700;font-size:14.5px}
+  .pay-note{font-size:13.5px;color:var(--mute);margin-top:10px;line-height:1.55}
+  .pay-qr{display:block;width:172px;height:172px;margin:14px auto 2px;border:1px solid var(--line);border-radius:14px;background:#fff}
+  .pay-upi-btn{display:flex;margin-top:12px;background:#15803d}
+  .pay-upi-btn:hover{background:#11632f}
+  .pay input{width:100%;margin-top:12px;border:1px solid #CFC2A6;border-radius:12px;padding:13px 14px;font-size:16.5px;font-family:inherit;background:#fff;color:var(--ink)}
+  .pay input:focus{outline:2px solid var(--navy);outline-offset:1px;border-color:transparent}
+  .pay .go{width:100%;margin-top:14px}
+  .pay-err{display:none;color:#B3261E;font-size:13.5px;margin-top:8px}
+  .pay-done{display:none;text-align:center;padding-top:10px}
+  .pay-ok{display:flex;align-items:center;justify-content:center;width:60px;height:60px;margin:4px auto 0;border-radius:50%;background:var(--navy);color:#FBF6EC;font-size:27px}
+  .pay-done h4{font-family:var(--head);font-size:21px;color:var(--navy);margin-top:14px}
+  .pay-done p{color:var(--soft);font-size:14.5px;margin-top:6px}
+  .pay-done .btn{width:100%;margin-top:16px}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap bar">
-    <div class="logo">G</div>
-    <div class="brand">Guidebook</div>
-    <a class="buy" href="#buy">Buy · ₹49</a>
-  </div>
+<header class="top wrap">
+  <a class="brand" href="#"><span class="ava">S</span> Saurabh Saha</a>
 </header>
 
-<main class="wrap">
+<main>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-text">
+      <div class="over">Gemini Notebook</div>
+      <h1>Guidebook</h1>
+      <p class="sub">For jobs, admissions or any study — how to use it the right way</p>
+      <span class="pill">14 pages</span>
+      <p class="tagline">From your own books and notes, using only your mobile</p>
+    </div>
 
-  <div class="hero">
-    <div class="cover" aria-label="Gemini Notebook Guidebook cover">
-      <div>
-        <div class="kicker">Gemini Notebook</div>
-        <h2>The <span>Guidebook</span></h2>
-        <p class="sub">Study from your own books &amp; notes — using only your mobile.</p>
+    <div class="stage">
+      <div class="glow"></div>
+      <div class="float">
+        <div class="book" aria-label="Gemini Notebook Guidebook cover">
+          <div class="face back"></div>
+          <div class="face front">
+            <div>
+              <div class="k">Gemini Notebook</div>
+              <h2>The<br><span>Guidebook</span></h2>
+              <div class="rule"></div>
+              <p class="s">Study from your own books &amp; notes — using only your mobile.</p>
+            </div>
+            <div class="f"><span>14 Pages</span><b>Step by step</b></div>
+          </div>
+        </div>
       </div>
-      <div class="foot"><span>14 Pages</span><b>Step by step</b></div>
+      <div class="ground"></div>
+      <button class="peek js-peek" type="button">👁 Look inside</button>
     </div>
 
-    <h1>Gemini Notebook Guidebook</h1>
-    <p class="lede">For job exams, admissions, or any study — how to actually use it, shown step by step. From your own books and notes, using only your mobile.</p>
-    <div class="pages">14 pages · PDF · Read on any phone</div>
-
-    <div class="price">
-      <span class="was">₹99</span>
-      <span class="off">50% OFF</span>
-      <span class="now">₹49</span>
+    <div class="buy">
+      <div class="price-wrap">
+        <div class="was"><s>₹99</s><em>50% off</em></div>
+        <div class="price">₹49</div>
+      </div>
+      <button class="btn js-buy" type="button">Get the Guidebook</button>
     </div>
-    <a class="cta" href="#buy">Get the Guidebook</a>
-    <p class="note">Pay by UPI · Download link right after payment</p>
-  </div>
+  </section>
 
-  <section>
-    <h3 class="sec">Normal AI chat vs Gemini Notebook</h3>
-    <div class="cards">
-      <div class="card">
-        <div class="tag">Normal AI chat</div>
-        <h4>Gemini, ChatGPT, Claude</h4>
+  <!-- DIFFERENCE -->
+  <section class="diff wrap">
+    <h2>Normal AI chat vs Gemini Notebook — the difference</h2>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <h3>Normal AI chat</h3>
+        <div class="who">Gemini, ChatGPT, Claude</div>
+        <div class="diff-logos"><span>Gemini</span><span>ChatGPT</span><span>Claude</span></div>
         <p>Answers from its own general knowledge. You usually can't tell where an answer came from — and sometimes the information is simply wrong.</p>
       </div>
-      <div class="card hl">
-        <div class="tag">Gemini Notebook</div>
-        <h4>From your own sources</h4>
+      <div class="diff-card gn">
+        <h3>Gemini Notebook</h3>
+        <div class="who">From your own sources</div>
+        <div class="diff-logos"><span>Your books</span><span>Your notes</span><span>Your PDFs</span></div>
         <p>Answers only from the sources you give it — your books, notes or PDFs. Every answer carries a small number beside it; tap it and you see the exact line the answer came from.</p>
       </div>
     </div>
-    <p style="color:var(--mut);font-size:15px;margin-top:14px">How to use this for exam preparation is shown step by step in the guidebook.</p>
+    <p class="after">How to use this for exam preparation is shown step by step in the guidebook.</p>
   </section>
 
-  <section>
-    <h3 class="sec">What's inside</h3>
-    <ul class="inside">
-      <li>Setting up Gemini Notebook on your mobile, from scratch</li>
-      <li>Adding your books, notes and PDFs as sources</li>
-      <li>Asking questions that give exam-ready answers — with citations</li>
-      <li>Making summaries, notes and revision material from your sources</li>
-      <li>A simple daily workflow for job and admission exam prep</li>
-    </ul>
-  </section>
-
-  <section id="buy">
-    <h3 class="sec">Get your copy</h3>
-    <div class="buybox">
-      <h4>Pay ₹49 by UPI</h4>
-      <p class="amt">Guidebook price: <b>₹49</b> <span style="text-decoration:line-through">₹99</span> · 50% off</p>
-      <img class="qr" alt="UPI QR code for ₹49 payment" src="https://api.qrserver.com/v1/create-qr-code/?size=420x420&margin=8&data=upi%3A%2F%2Fpay%3Fpa%3Dcongress%40jio%26pn%3DSaurabh%2520Saha%26am%3D49.00%26cu%3DINR%26tn%3DGemini%2520Notebook%2520Guidebook">
-      <p class="upiid">Scan with any UPI app, or pay to <b>congress@jio</b></p>
-      <a class="paybtn" href="upi://pay?pa=congress@jio&pn=Saurabh%20Saha&am=49.00&cu=INR&tn=Gemini%20Notebook%20Guidebook">Pay with UPI app</a>
-      <div class="steps"><span>1 · Pay ₹49</span><span>2 · Note the UTR / Ref No.</span><span>3 · Enter it below</span></div>
-
-      <form id="verifyForm" novalidate>
-        <p>Paid? Enter your details to unlock the download.</p>
-        <label for="fName">Your name</label>
-        <input id="fName" type="text" autocomplete="name" placeholder="e.g. Rahul Sharma">
-        <label for="fEmail">Email (to send your copy)</label>
-        <input id="fEmail" type="email" autocomplete="email" placeholder="you@example.com">
-        <label for="fUtr">UPI Transaction ID / UTR (12 digits)</label>
-        <input id="fUtr" type="text" inputmode="numeric" maxlength="12" placeholder="e.g. 412345678901">
-        <div class="err" id="formErr"></div>
-        <button class="go" type="submit">Verify &amp; Unlock Download</button>
-      </form>
-
-      <div class="done" id="doneBox">
-        <div class="tick">✓</div>
-        <h5>Payment noted — your guidebook is ready</h5>
-        <p>Download it now. A copy link has also been noted for your email.</p>
-        <a class="dl" href="guidebook.pdf" download>Download the Guidebook (PDF)</a>
-      </div>
-    </div>
-    <p class="note">Every UTR is checked against the payment. If anything goes wrong, your money is refunded.</p>
-  </section>
-
-  <section>
-    <h3 class="sec">Common questions</h3>
+  <!-- FAQ -->
+  <section class="faq wrap">
+    <h2>Common questions</h2>
     <details>
       <summary>How will I get the guidebook?</summary>
-      <p>Right after payment — enter your UPI Transaction ID (UTR) in the form above and the download link unlocks immediately.</p>
+      <p>Right after payment, you will get the download link immediately.</p>
     </details>
     <details>
       <summary>How do I pay?</summary>
-      <p>By UPI from any app — Google Pay, PhonePe, Paytm, BHIM and others. Scan the QR code or tap “Pay with UPI app”, pay ₹49 to <b>congress@jio</b>, then enter the 12-digit UTR / Ref No. from your payment app.</p>
+      <p>Pay ₹49 by UPI to <b>congress@jio</b> from any app — Google Pay, PhonePe, Paytm or BHIM. Then enter the UTR / Ref No. and the payment is verified.</p>
     </details>
     <details>
       <summary>Can I use Gemini Notebook on mobile?</summary>
       <p>Yes. Gemini Notebook has apps for both Android and iPhone — just download it from the Play Store or App Store.</p>
     </details>
-    <details>
-      <summary>What if my payment is done but the download doesn't open?</summary>
-      <p>Keep your UTR safe and reach out with it — your copy will be sent to your email after a quick check.</p>
-    </details>
   </section>
-
 </main>
 
-<footer>
-  <div class="wrap">
-    <b>Guidebook</b> by Saurabh Saha · Pay securely by UPI<br>
-    Gemini Notebook is a product of Google; this guidebook is an independent study aid.
-  </div>
+<footer class="foot wrap">
+  <span class="ava">S</span>
+  <div>© 2026 Saurabh Saha</div>
 </footer>
 
+<!-- STICKY BAR -->
+<div class="sticky" id="stickyBar">
+  <div>
+    <div class="t">Gemini Notebook Guidebook</div>
+    <div class="p"><s>₹99</s> &nbsp;<b>₹49</b></div>
+  </div>
+  <div class="sp"></div>
+  <button class="btn btn-sm js-buy" type="button">Get it</button>
+</div>
+
+<!-- READER -->
+<div class="overlay rd" id="reader" role="dialog" aria-modal="true" aria-label="Look inside the guidebook">
+  <div class="scrim js-rd-close"></div>
+  <div class="rd-card">
+    <div class="rd-bar"><button class="lb-btn js-rd-close" type="button" aria-label="Close">✕</button></div>
+    <div class="rd-stage">
+      <div class="rd-book" id="rdBook">
+        <div class="rd-page coverp on">
+          <div class="pg-k" style="color:#E9B44C">Gemini Notebook</div>
+          <h4>The Guidebook</h4>
+          <p>Study from your own books &amp; notes — using only your mobile.</p>
+          <div class="pg-n" style="color:#93A3C0">Cover</div>
+        </div>
+        <div class="rd-page">
+          <div class="pg-k">Chapter 1</div>
+          <h4>Setting up, the right way</h4>
+          <p>Open Gemini Notebook on your phone and create your first notebook. Give it the name of your exam or subject — one notebook per subject keeps every answer clean and separate…</p>
+          <span class="rd-lock">🔒 The full page is in the guidebook</span>
+          <div class="pg-n">Page 1 of 14</div>
+        </div>
+        <div class="rd-page">
+          <div class="pg-k">Inside the guidebook</div>
+          <h4>What you will learn</h4>
+          <p>Setup, adding sources, 10 tested prompts, common problems and their fixes, and a one-page checklist — 14 pages in total, everything step by step.</p>
+          <span class="rd-lock">🔒 The full guidebook is 14 pages</span>
+          <div class="pg-n">Preview</div>
+        </div>
+        <div class="rd-page rd-end">
+          <span class="rd-end-logo">S</span>
+          <h4 style="margin-top:14px">Saurabh Saha</h4>
+          <p>Get all 14 pages in the guidebook — setup, adding sources, 10 tested prompts, troubleshooting and a one-page checklist.</p>
+          <div class="was"><s>₹99</s><em>50% off</em></div>
+          <div class="price">₹49</div>
+          <button class="btn js-buy" type="button" style="margin-top:14px;width:100%">Get the Guidebook</button>
+        </div>
+      </div>
+      <button class="lb-btn rd-nav lb-prev" id="rdPrev" type="button" aria-label="Previous page">‹</button>
+      <button class="lb-btn rd-nav lb-next" id="rdNext" type="button" aria-label="Next page">›</button>
+    </div>
+    <p class="rd-hint">Tap the page or use the arrows to turn pages</p>
+  </div>
+</div>
+
+<!-- PAYMENT SHEET -->
+<div class="overlay pay" id="paySheet" role="dialog" aria-modal="true" aria-label="Buy the guidebook">
+  <div class="scrim js-pay-close"></div>
+  <div class="pay-card">
+    <div class="pay-head">
+      <h3>Get the Guidebook</h3>
+      <button class="pay-x js-pay-close" type="button" aria-label="Close">✕</button>
+    </div>
+
+    <div id="paySteps">
+      <div class="pay-step">
+        <b>1</b>
+        <div class="tx">
+          <strong>Pay <span class="amt">₹49</span> by UPI</strong>
+          <div class="pay-num">
+            <div class="id"><small>UPI ID</small>congress@jio</div>
+            <button class="pay-copy" id="copyBtn" type="button">Copy</button>
+          </div>
+          <img class="pay-qr" alt="UPI QR code for ₹49" src="https://api.qrserver.com/v1/create-qr-code/?size=420x420&margin=8&data=upi%3A%2F%2Fpay%3Fpa%3Dcongress%40jio%26pn%3DSaurabh%2520Saha%26am%3D49.00%26cu%3DINR%26tn%3DGemini%2520Notebook%2520Guidebook">
+          <a class="btn pay-upi-btn" href="upi://pay?pa=congress@jio&pn=Saurabh%20Saha&am=49.00&cu=INR&tn=Gemini%20Notebook%20Guidebook">Pay with UPI app</a>
+          <p class="pay-note">Pay to this UPI ID from any app — Google Pay, PhonePe, Paytm or BHIM. Pay exactly ₹49 so the payment can be matched.</p>
+        </div>
+      </div>
+
+      <div class="pay-step">
+        <b>2</b>
+        <div class="tx">
+          <strong>Enter the UTR / Ref No. from your UPI app</strong>
+          <input id="utrInput" type="text" inputmode="numeric" maxlength="12" placeholder="12-digit UTR / Ref No.">
+          <div class="pay-err" id="payErr">The UTR is the 12-digit number shown in your UPI app after payment — please check it and try again.</div>
+          <button class="btn go" id="verifyBtn" type="button">Verify</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pay-done" id="payDone">
+      <div class="pay-ok">✓</div>
+      <h4>Payment received, thank you!</h4>
+      <p>Download the guidebook now and save the file on your phone.</p>
+      <a class="btn" href="guidebook.pdf" download>Download the Guidebook</a>
+      <p style="margin-top:12px">Keep your UTR safe — if the download ever fails, it is your proof of payment.</p>
+    </div>
+  </div>
+</div>
+
 <script>
-  var form = document.getElementById('verifyForm');
-  var err = document.getElementById('formErr');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var name = document.getElementById('fName').value.trim();
-    var email = document.getElementById('fEmail').value.trim();
-    var utr = document.getElementById('fUtr').value.trim();
-    function fail(msg){ err.textContent = msg; err.style.display = 'block'; }
-    if(name.length < 2) return fail('Please enter your name.');
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail('Please enter a valid email address.');
-    if(!/^\d{12}$/.test(utr)) return fail('The UTR is the 12-digit number in your UPI app — please check and enter it again.');
-    err.style.display = 'none';
-    try{ localStorage.setItem('guidebook_order', JSON.stringify({name:name, email:email, utr:utr, at:new Date().toISOString()})); }catch(_){}
-    form.style.display = 'none';
-    document.getElementById('doneBox').style.display = 'block';
-    document.getElementById('doneBox').scrollIntoView({behavior:'smooth', block:'center'});
+  // sticky bar
+  var sticky = document.getElementById('stickyBar');
+  var buyRow = document.querySelector('.buy');
+  if('IntersectionObserver' in window && buyRow){
+    new IntersectionObserver(function(en){ sticky.classList.toggle('show', !en[0].isIntersecting && window.scrollY > 120); }, {threshold:0}).observe(buyRow);
+  }
+  // reader
+  var reader = document.getElementById('reader');
+  var pages = Array.prototype.slice.call(document.querySelectorAll('.rd-page'));
+  var rdBook = document.getElementById('rdBook');
+  var cur = 0;
+  function showPage(i){
+    cur = Math.max(0, Math.min(pages.length - 1, i));
+    pages.forEach(function(p, j){ p.classList.toggle('on', j === cur); });
+    rdBook.classList.remove('rd-fly'); void rdBook.offsetWidth; rdBook.classList.add('rd-fly');
+    document.getElementById('rdPrev').style.opacity = cur === 0 ? .35 : 1;
+    document.getElementById('rdNext').style.opacity = cur === pages.length - 1 ? .35 : 1;
+  }
+  function openReader(){ reader.classList.add('open'); document.body.style.overflow = 'hidden'; showPage(0); }
+  function closeReader(){ reader.classList.remove('open'); document.body.style.overflow = ''; }
+  document.querySelectorAll('.js-peek').forEach(function(b){ b.addEventListener('click', openReader); });
+  document.querySelectorAll('.js-rd-close').forEach(function(b){ b.addEventListener('click', closeReader); });
+  document.getElementById('rdPrev').addEventListener('click', function(e){ e.stopPropagation(); showPage(cur - 1); });
+  document.getElementById('rdNext').addEventListener('click', function(e){ e.stopPropagation(); showPage(cur + 1); });
+  rdBook.addEventListener('click', function(){ if(cur < pages.length - 1) showPage(cur + 1); });
+  var tx0 = null;
+  rdBook.addEventListener('touchstart', function(e){ tx0 = e.touches[0].clientX; }, {passive:true});
+  rdBook.addEventListener('touchend', function(e){
+    if(tx0 === null) return;
+    var dx = e.changedTouches[0].clientX - tx0;
+    if(Math.abs(dx) > 42) showPage(cur + (dx < 0 ? 1 : -1));
+    tx0 = null;
+  }, {passive:true});
+  // payment sheet
+  var pay = document.getElementById('paySheet');
+  function openPay(){ pay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closePay(){ pay.classList.remove('open'); document.body.style.overflow = ''; }
+  document.querySelectorAll('.js-buy').forEach(function(b){ b.addEventListener('click', function(){ closeReader(); openPay(); }); });
+  document.querySelectorAll('.js-pay-close').forEach(function(b){ b.addEventListener('click', closePay); });
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var btn = this;
+    function done(){ btn.textContent = 'Copied ✓'; setTimeout(function(){ btn.textContent = 'Copy'; }, 1800); }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText('congress@jio').then(done, done); } else { done(); }
   });
+  document.getElementById('verifyBtn').addEventListener('click', function(){
+    var utr = document.getElementById('utrInput').value.trim();
+    var err = document.getElementById('payErr');
+    if(!/^\d{12}$/.test(utr)){ err.style.display = 'block'; return; }
+    err.style.display = 'none';
+    try{ localStorage.setItem('guidebook_utr', utr); }catch(_){}
+    document.getElementById('paySteps').style.display = 'none';
+    document.getElementById('payDone').style.display = 'block';
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closePay(); closeReader(); } });
   if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
 </script>
 </body>
