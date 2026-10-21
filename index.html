@@ -258,7 +258,7 @@
     <h2>Common questions</h2>
     <details>
       <summary>How will I get the guidebook?</summary>
-      <p>After payment, enter your name, email and UTR — a ready-made request email opens in your mail app. Send it, and the PDF copy will be emailed to you after a quick verification.</p>
+      <p>After payment, enter your name and UTR — a ready-made request email opens in your mail app. Send it, and the PDF copy will be emailed back to you after a quick verification.</p>
     </details>
     <details>
       <summary>How do I pay?</summary>
@@ -356,9 +356,8 @@
       <div class="pay-step">
         <b>2</b>
         <div class="tx">
-          <strong>Your details + UTR / Ref No. from your UPI app</strong>
+          <strong>Your name + UTR / Ref No. from your UPI app</strong>
           <input id="nameInput" type="text" autocomplete="name" placeholder="Your name" style="margin-top:12px">
-          <input id="emailInput" type="email" autocomplete="email" placeholder="Your email (the PDF will be sent here)">
           <input id="utrInput" type="text" inputmode="numeric" maxlength="12" placeholder="12-digit UTR / Ref No.">
           <div class="pay-err" id="payErr">Please check your details — the UTR is the 12-digit number shown in your UPI app after payment.</div>
           <button class="btn go" id="verifyBtn" type="button">Verify &amp; Request PDF</button>
@@ -423,20 +422,18 @@
   });
   document.getElementById('verifyBtn').addEventListener('click', function(){
     var name = document.getElementById('nameInput').value.trim();
-    var email = document.getElementById('emailInput').value.trim();
     var utr = document.getElementById('utrInput').value.trim();
     var err = document.getElementById('payErr');
-    if(name.length < 2 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !/^\d{12}$/.test(utr)){ err.style.display = 'block'; return; }
+    if(name.length < 2 || !/^\d{12}$/.test(utr)){ err.style.display = 'block'; return; }
     err.style.display = 'none';
-    try{ localStorage.setItem('guidebook_order', JSON.stringify({name:name, email:email, utr:utr})); }catch(_){}
+    try{ localStorage.setItem('guidebook_order', JSON.stringify({name:name, utr:utr})); }catch(_){}
     var subject = 'Guidebook PDF Request - UTR ' + utr;
     var body = [
       'Hi Saurabh,',
       '',
-      'I have paid Rs.49 for the Gemini Notebook Guidebook by UPI. Please send the PDF copy to my email.',
+      'I have paid Rs.49 for the Gemini Notebook Guidebook by UPI. Please send the PDF copy to this email.',
       '',
       'Name: ' + name,
-      'Email: ' + email,
       'Amount Paid: Rs.49',
       'UPI ID paid to: congress@jio',
       'UTR / Ref No.: ' + utr,
