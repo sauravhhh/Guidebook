@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gemini Notebook Guidebook — Study Smarter From Your Own Books &amp; Notes</title>
+<meta name="description" content="A 14-page step-by-step guidebook on using Gemini Notebook for job exams, admissions and study — from your own books and notes, using only your mobile.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<style>
+  :root{
+    --ink:#0a0a0a; --mut:#5c5c5c; --line:#e7e7e7; --bg:#ffffff;
+    --soft:#f6f6f4; --accent:#b45309; --accent-soft:#fdf3e3;
+    --green:#15803d; --radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+  .bar{display:flex;align-items:center;gap:10px;padding:12px 0}
+  .logo{width:34px;height:34px;border-radius:9px;background:#0a0a0a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+  .brand{font-weight:700;font-size:17px;letter-spacing:-.01em}
+  .bar a.buy{margin-left:auto;background:var(--ink);color:#fff;text-decoration:none;font-size:14px;font-weight:600;padding:8px 16px;border-radius:999px}
+  /* hero */
+  .hero{padding:40px 0 8px;text-align:center}
+  .cover{width:min(300px,72vw);aspect-ratio:3/4;margin:0 auto 26px;border-radius:10px;background:linear-gradient(150deg,#111 0%,#1c1c1e 55%,#2b2118 100%);color:#fff;box-shadow:0 24px 48px rgba(0,0,0,.28);display:flex;flex-direction:column;justify-content:space-between;padding:26px 22px;text-align:left;position:relative;overflow:hidden}
+  .cover::after{content:"";position:absolute;inset:auto -40px -60px auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.35),transparent 70%)}
+  .cover .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#f5b74a;font-weight:700}
+  .cover h2{font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-.01em}
+  .cover h2 span{color:#f5b74a}
+  .cover .sub{font-size:13.5px;color:#cfcfcf;margin-top:8px}
+  .cover .foot{display:flex;justify-content:space-between;align-items:flex-end;font-size:11px;color:#9a9a9a;letter-spacing:.08em;text-transform:uppercase}
+  .cover .foot b{color:#fff;font-size:12px}
+  h1{font-size:30px;line-height:1.2;font-weight:800;letter-spacing:-.02em}
+  .lede{color:var(--mut);font-size:16.5px;margin-top:10px}
+  .pages{display:inline-block;margin-top:14px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:13.5px;font-weight:600}
+  .price{margin:26px 0 4px;display:flex;align-items:baseline;justify-content:center;gap:12px}
+  .price .was{color:#9a9a9a;text-decoration:line-through;font-size:22px}
+  .price .off{background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:13px;padding:3px 10px;border-radius:999px}
+  .price .now{font-size:44px;font-weight:800;letter-spacing:-.02em}
+  .cta{display:block;margin:18px auto 0;max-width:420px;background:var(--ink);color:#fff;text-align:center;text-decoration:none;font-weight:700;font-size:17px;padding:15px 20px;border-radius:999px}
+  .cta:active{transform:scale(.99)}
+  .note{text-align:center;color:var(--mut);font-size:13px;margin-top:10px}
+  /* sections */
+  section{padding:34px 0 6px}
+  h3.sec{font-size:21px;font-weight:800;letter-spacing:-.01em;margin-bottom:14px}
+  .cards{display:grid;gap:14px}
+  @media(min-width:560px){.cards{grid-template-columns:1fr 1fr}}
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:#fff}
+  .card.hl{background:var(--soft);border-color:#dcdcdc}
+  .card h4{font-size:16.5px;font-weight:700;margin-bottom:6px}
+  .card .tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
+  .card.hl .tag{color:var(--accent)}
+  .card p{color:#333;font-size:15px}
+  ul.inside{list-style:none}
+  ul.inside li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px;display:flex;gap:10px}
+  ul.inside li:last-child{border-bottom:none}
+  ul.inside li::before{content:"✓";color:var(--green);font-weight:800}
+  /* buy box */
+  .buybox{border:1.5px solid var(--ink);border-radius:var(--radius);padding:24px 20px;margin-top:6px}
+  .buybox h4{font-size:18px;font-weight:800;text-align:center}
+  .buybox .amt{text-align:center;font-size:15px;color:var(--mut);margin-top:4px}
+  .buybox .amt b{color:var(--ink);font-size:17px}
+  .qr{display:block;width:210px;height:210px;margin:18px auto 6px;border:1px solid var(--line);border-radius:12px}
+  .upiid{text-align:center;font-size:14.5px;color:var(--mut)}
+  .upiid b{color:var(--ink)}
+  .paybtn{display:block;margin:16px auto 0;max-width:420px;background:var(--green);color:#fff;text-align:center;text-decoration:none;font-weight:700;font-size:16.5px;padding:14px 20px;border-radius:999px}
+  .steps{display:flex;gap:8px;justify-content:center;margin:18px 0 2px;flex-wrap:wrap}
+  .steps span{font-size:12.5px;font-weight:600;background:var(--soft);border:1px solid var(--line);padding:4px 11px;border-radius:999px}
+  form{margin-top:20px;border-top:1px dashed var(--line);padding-top:20px}
+  form p{font-size:14.5px;font-weight:600;margin-bottom:12px;text-align:center}
+  label{display:block;font-size:13px;font-weight:600;color:var(--mut);margin:12px 0 5px}
+  input{width:100%;border:1px solid #cfcfcf;border-radius:10px;padding:12px 13px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink)}
+  input:focus{outline:2px solid var(--ink);outline-offset:1px;border-color:transparent}
+  button.go{width:100%;margin-top:18px;background:var(--ink);color:#fff;border:none;font-family:inherit;font-weight:700;font-size:16.5px;padding:14px;border-radius:999px;cursor:pointer}
+  .err{color:#b91c1c;font-size:13.5px;margin-top:8px;display:none}
+  .done{display:none;text-align:center;padding:8px 0 2px}
+  .done .tick{width:54px;height:54px;border-radius:50%;background:#e8f7ee;color:var(--green);font-size:27px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+  .done h5{font-size:17px;font-weight:800}
+  .done p{color:var(--mut);font-size:14px;margin-top:4px}
+  .dl{display:inline-block;margin-top:14px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;padding:13px 26px;border-radius:999px;font-size:16px}
+  /* faq */
+  details{border-bottom:1px solid var(--line);padding:14px 0}
+  details summary{font-weight:700;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-size:20px;color:var(--mut)}
+  details[open ] summary::after{content:"–"}
+  details p{color:#333;font-size:15px;margin-top:8px}
+  footer{margin-top:44px;border-top:1px solid var(--line);padding:22px 0 34px;text-align:center;color:var(--mut);font-size:13.5px}
+  footer b{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="logo">G</div>
+    <div class="brand">Guidebook</div>
+    <a class="buy" href="#buy">Buy · ₹49</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="cover" aria-label="Gemini Notebook Guidebook cover">
+      <div>
+        <div class="kicker">Gemini Notebook</div>
+        <h2>The <span>Guidebook</span></h2>
+        <p class="sub">Study from your own books &amp; notes — using only your mobile.</p>
+      </div>
+      <div class="foot"><span>14 Pages</span><b>Step by step</b></div>
+    </div>
+
+    <h1>Gemini Notebook Guidebook</h1>
+    <p class="lede">For job exams, admissions, or any study — how to actually use it, shown step by step. From your own books and notes, using only your mobile.</p>
+    <div class="pages">14 pages · PDF · Read on any phone</div>
+
+    <div class="price">
+      <span class="was">₹99</span>
+      <span class="off">50% OFF</span>
+      <span class="now">₹49</span>
+    </div>
+    <a class="cta" href="#buy">Get the Guidebook</a>
+    <p class="note">Pay by UPI · Download link right after payment</p>
+  </div>
+
+  <section>
+    <h3 class="sec">Normal AI chat vs Gemini Notebook</h3>
+    <div class="cards">
+      <div class="card">
+        <div class="tag">Normal AI chat</div>
+        <h4>Gemini, ChatGPT, Claude</h4>
+        <p>Answers from its own general knowledge. You usually can't tell where an answer came from — and sometimes the information is simply wrong.</p>
+      </div>
+      <div class="card hl">
+        <div class="tag">Gemini Notebook</div>
+        <h4>From your own sources</h4>
+        <p>Answers only from the sources you give it — your books, notes or PDFs. Every answer carries a small number beside it; tap it and you see the exact line the answer came from.</p>
+      </div>
+    </div>
+    <p style="color:var(--mut);font-size:15px;margin-top:14px">How to use this for exam preparation is shown step by step in the guidebook.</p>
+  </section>
+
+  <section>
+    <h3 class="sec">What's inside</h3>
+    <ul class="inside">
+      <li>Setting up Gemini Notebook on your mobile, from scratch</li>
+      <li>Adding your books, notes and PDFs as sources</li>
+      <li>Asking questions that give exam-ready answers — with citations</li>
+      <li>Making summaries, notes and revision material from your sources</li>
+      <li>A simple daily workflow for job and admission exam prep</li>
+    </ul>
+  </section>
+
+  <section id="buy">
+    <h3 class="sec">Get your copy</h3>
+    <div class="buybox">
+      <h4>Pay ₹49 by UPI</h4>
+      <p class="amt">Guidebook price: <b>₹49</b> <span style="text-decoration:line-through">₹99</span> · 50% off</p>
+      <img class="qr" alt="UPI QR code for ₹49 payment" src="https://api.qrserver.com/v1/create-qr-code/?size=420x420&margin=8&data=upi%3A%2F%2Fpay%3Fpa%3Dcongress%40jio%26pn%3DSaurabh%2520Saha%26am%3D49.00%26cu%3DINR%26tn%3DGemini%2520Notebook%2520Guidebook">
+      <p class="upiid">Scan with any UPI app, or pay to <b>congress@jio</b></p>
+      <a class="paybtn" href="upi://pay?pa=congress@jio&pn=Saurabh%20Saha&am=49.00&cu=INR&tn=Gemini%20Notebook%20Guidebook">Pay with UPI app</a>
+      <div class="steps"><span>1 · Pay ₹49</span><span>2 · Note the UTR / Ref No.</span><span>3 · Enter it below</span></div>
+
+      <form id="verifyForm" novalidate>
+        <p>Paid? Enter your details to unlock the download.</p>
+        <label for="fName">Your name</label>
+        <input id="fName" type="text" autocomplete="name" placeholder="e.g. Rahul Sharma">
+        <label for="fEmail">Email (to send your copy)</label>
+        <input id="fEmail" type="email" autocomplete="email" placeholder="you@example.com">
+        <label for="fUtr">UPI Transaction ID / UTR (12 digits)</label>
+        <input id="fUtr" type="text" inputmode="numeric" maxlength="12" placeholder="e.g. 412345678901">
+        <div class="err" id="formErr"></div>
+        <button class="go" type="submit">Verify &amp; Unlock Download</button>
+      </form>
+
+      <div class="done" id="doneBox">
+        <div class="tick">✓</div>
+        <h5>Payment noted — your guidebook is ready</h5>
+        <p>Download it now. A copy link has also been noted for your email.</p>
+        <a class="dl" href="guidebook.pdf" download>Download the Guidebook (PDF)</a>
+      </div>
+    </div>
+    <p class="note">Every UTR is checked against the payment. If anything goes wrong, your money is refunded.</p>
+  </section>
+
+  <section>
+    <h3 class="sec">Common questions</h3>
+    <details>
+      <summary>How will I get the guidebook?</summary>
+      <p>Right after payment — enter your UPI Transaction ID (UTR) in the form above and the download link unlocks immediately.</p>
+    </details>
+    <details>
+      <summary>How do I pay?</summary>
+      <p>By UPI from any app — Google Pay, PhonePe, Paytm, BHIM and others. Scan the QR code or tap “Pay with UPI app”, pay ₹49 to <b>congress@jio</b>, then enter the 12-digit UTR / Ref No. from your payment app.</p>
+    </details>
+    <details>
+      <summary>Can I use Gemini Notebook on mobile?</summary>
+      <p>Yes. Gemini Notebook has apps for both Android and iPhone — just download it from the Play Store or App Store.</p>
+    </details>
+    <details>
+      <summary>What if my payment is done but the download doesn't open?</summary>
+      <p>Keep your UTR safe and reach out with it — your copy will be sent to your email after a quick check.</p>
+    </details>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <b>Guidebook</b> by Saurabh Saha · Pay securely by UPI<br>
+    Gemini Notebook is a product of Google; this guidebook is an independent study aid.
+  </div>
+</footer>
+
+<script>
+  var form = document.getElementById('verifyForm');
+  var err = document.getElementById('formErr');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('fName').value.trim();
+    var email = document.getElementById('fEmail').value.trim();
+    var utr = document.getElementById('fUtr').value.trim();
+    function fail(msg){ err.textContent = msg; err.style.display = 'block'; }
+    if(name.length < 2) return fail('Please enter your name.');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail('Please enter a valid email address.');
+    if(!/^\d{12}$/.test(utr)) return fail('The UTR is the 12-digit number in your UPI app — please check and enter it again.');
+    err.style.display = 'none';
+    try{ localStorage.setItem('guidebook_order', JSON.stringify({name:name, email:email, utr:utr, at:new Date().toISOString()})); }catch(_){}
+    form.style.display = 'none';
+    document.getElementById('doneBox').style.display = 'block';
+    document.getElementById('doneBox').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+  if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
+</script>
+</body>
+</html>
